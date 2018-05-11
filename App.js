@@ -48,10 +48,13 @@ handleValidation(){
            formIsValid = false;
            errors["fullName"] = "Please fill out this field";
         }
-    if(fields["fullName"].length < 3){
-           formIsValid = false;
-           errors["fullName"] = "Please enter minimum 3 letters";
-        }
+    
+ var fullNameLen = fields["fullName"].length;
+   if(fullNameLen < 3)
+       {
+          formIsValid = false;
+           errors["confirmEmail"] = "Please enter atleast 3 letters"; 
+       }
 
         if(typeof fields["fullName"] !== "undefined"){
              if(!fields["fullName"].match(/^[a-zA-Z]+$/)){
